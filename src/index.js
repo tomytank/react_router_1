@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
+import { BrowserRouter as Router } from "react-router-dom";
+
 import data from "./data";
 
 import "./styles.css";
@@ -19,4 +21,9 @@ const App = () => {
 };
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+  <Router>
+    <App />
+  </Router>,
+  rootElement
+);
