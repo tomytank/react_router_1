@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Home from "./components/Home";
 import ItemsList from "./components/ItemsList";
+import Item from "./components/Item";
 
 import data from "./data";
 
@@ -17,10 +18,14 @@ const App = () => {
     <div className="App">
       <nav>
         <h1 className="store-header">Dan's Trinkets</h1>
-        <div className="nav-links" />
+        <div className="nav-links">
+          <Link to="/items">Shop</Link>
+          <Link to="/">Home</Link>
+        </div>
       </nav>
-      <Route path="/" component={Home} />
-      <Route path="/items" component={ItemsList} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/items" component={ItemsList} />
+      <Route path="/items/1" component={Item} />
     </div>
   );
 };
