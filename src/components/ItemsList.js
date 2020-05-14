@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import items from "../data";
 
 function ItemsList() {
@@ -8,12 +10,14 @@ function ItemsList() {
       {items.map(item => {
         return (
           <div className="item-card" key={item.id}>
-            <img
-              className="item-list-image"
-              src={item.imageUrl}
-              alt={item.name}
-            />
-            <p>{item.name}</p>
+            <Link to={`/items/${item.id}`}>
+              <img
+                className="item-list-image"
+                src={item.imageUrl}
+                alt={item.name}
+              />
+              <p>{item.name}</p>
+            </Link>
             <p>${item.price}</p>
           </div>
         );
