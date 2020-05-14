@@ -25,7 +25,7 @@ const App = () => {
       </nav>
       <Route exact path="/" component={Home} />
       <Route exact path="/items" component={ItemsList} />
-      <Route path="/items/1" component={Item} />
+      <Route path="/items/:id" component={Item} />
     </div>
   );
 };

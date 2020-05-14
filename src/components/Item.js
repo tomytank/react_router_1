@@ -1,8 +1,12 @@
 import React from "react";
 import items from "../data";
+import { useParams } from "react-router-dom";
 
 export default function Item() {
-  const item = items.find(thing => `${thing.id}` === "1");
+  const params = useParams();
+  console.log("Params ", params);
+  const item = items.find(thing => `${thing.id}` === params.id);
+
   return (
     <div className="item-wrapper">
       <div className="item-header">
